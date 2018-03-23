@@ -3,16 +3,17 @@ import java.util.Scanner;
 public class CheckYear {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         System.out.println("Input a year : ");
-        int year = scanner.nextInt();
-
-        if (checkYear(year)) {
-            System.out.printf("Leap year", year);
-        } else {
-            System.out.printf("Not leap year", year);
+        int yearbefore = scanner.nextInt();
+        System.out.println("Input a year : ");
+        int yearafter = scanner.nextInt();
+        for (int i = yearbefore; i < yearafter; i++) {
+            if (checkYear(i)) {
+                System.out.println("Year " + i + " has 366 days");
+            } else {
+                System.out.println("Year " + i + " has 365 days");
+            }
         }
-
     }
 
     public static boolean checkYear(int year) {
